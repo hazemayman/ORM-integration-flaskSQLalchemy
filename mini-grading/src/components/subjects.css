@@ -1,0 +1,121 @@
+p{
+    margin: 0 0;
+    padding: 0.2rem 0;
+}
+.subjects-container{
+    /* border: 1px solid red; */
+    width: 80rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+.current-subjects-container{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    height: 20rem;
+    overflow-y: scroll;
+
+}
+
+.subject-card{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0.4rem 0rem;
+    align-items: center;
+    cursor: pointer;
+
+}
+.subject-card-unique{
+    color: red;
+    cursor:pointer;
+}
+.subject-card h5{
+    height: 0rem;
+    width: 12rem;
+}
+.subject-card-unique h5{
+    color: red;
+    cursor:pointer;
+    height: 0rem;
+    width: 12rem;
+}
+
+.new-subject-form{
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    height: fit-content;
+    padding: 1rem 2rem;
+
+    margin: 1rem auto;
+    justify-content: center;
+
+    font-size: larger;
+    /* align-items: ; */
+}
+
+.new-subject-form label{
+    display: block;
+    margin: 0.2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.new-subject-form input {
+    border: none;
+    border: 1px solid gray;
+    border-radius:  0.3rem;
+}
+
+#marks-dist-label{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.submit-form{
+    margin: 1.2rem auto;
+    padding: 0.2rem 0.4rem;
+    width: 5rem;
+    height: 2rem;
+
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    font-size: large;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 2rem;
+    transition:  all 0.2s ease-in-out;
+}
+
+
+
+.submit-form:hover{
+    color: white;
+    background-color: rgba(25, 21, 229, 0.758);
+}
+
+.errorMessage{
+    /* position: fixed; */
+    /* align-self: center; */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 0, 0, 0.985);
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+
+}
+
