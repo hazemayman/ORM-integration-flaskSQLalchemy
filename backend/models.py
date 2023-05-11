@@ -31,7 +31,6 @@ def get_marks(marks):
 
 class Doctors(db.Model):
     __tablename__ = 'doctors'
-# first_name	last_name	age	email_address	phone_number	gender	doctor_id	degree	salary
     subjects = db.relationship('Subjects' , back_populates="doctors")
 
     def as_dict(self):
@@ -46,7 +45,6 @@ class Doctors(db.Model):
             'degree' : self.degree,
             'salary' : self.salary,
             'doctor_id' : self.doctor_id,
-            # subject_id	semester	name	marks	major	credit_hours	doctor_id_fk	
             'subjects' : [{
                 'subject_id' : j.subject_id,
                 'semester' : j.semester,
@@ -110,7 +108,6 @@ class Students(db.Model):
     __tablename__ = 'students'
     
     subjects = db.relationship('Grades' , back_populates="student")
-# first_name	last_name	age	email_address	phone_number	gender	student_id	level	cgpa	total_credit_hours	
     def as_dict(self):
         data = {
             'student_id' : self.student_id,
@@ -147,7 +144,6 @@ class Subjects(db.Model):
     doctors = db.relationship('Doctors' , back_populates="subjects")
 
     students = db.relationship('Grades' , back_populates="subject")
-# subject_id	semester	name	marks	major	credit_hours	doctor_id_fk	
     def as_dict(self):
         data = {
             'subject_id' : self.subject_id,
@@ -175,10 +171,6 @@ class Subjects(db.Model):
             ]
         }
         return data
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
 
 
 @app.route("/subjects" , methods = ['GET'])
@@ -238,7 +230,6 @@ def subjects_create():
         payload['semester'] = datetime.date(int(payload['semester'].split('-')[0]),
                                             int(payload['semester'].split('-')[1]),
                                             int(payload['semester'].split('-')[2]))
-
 
         data = payload
 

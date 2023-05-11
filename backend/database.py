@@ -65,6 +65,7 @@ def createTables(conn : psycopg2.connect):
             phone_number VARCHAR(20) NOT NULL,
             gender VARCHAR(50) NOT NULL
         )
+
         """,
         """ 
         CREATE TABLE Doctors (
@@ -72,6 +73,7 @@ def createTables(conn : psycopg2.connect):
                 degree  VARCHAR(100),
                 salary INT NOT NULL
         ) INHERITS (Person)
+
         """,
         """
         CREATE TABLE Students (
@@ -80,6 +82,7 @@ def createTables(conn : psycopg2.connect):
                 CGPA float(2) DEFAULT 0.00,
                 total_credit_hours SMALLINT DEFAULT 0
         )INHERITS (Person)
+
         """,
         """
         CREATE TYPE marks_dist AS (
@@ -90,6 +93,8 @@ def createTables(conn : psycopg2.connect):
                 project SMALLINT ,
                 practical SMALLINT
         )
+
+        
         """
         ,
         """
@@ -106,6 +111,7 @@ def createTables(conn : psycopg2.connect):
                     REFERENCES Doctors (doctor_id)
                     ON UPDATE CASCADE ON DELETE CASCADE
         )   
+
         """,
         """
         CREATE TABLE Grades (
